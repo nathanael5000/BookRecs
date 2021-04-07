@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Book Recs</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <form id="newRecForm" name="newRecForm">
+                    <div class="form-group">
+                        <label for="bookTitle">Name of Book</label>
+                        <input type="text" class="form-control" id="bookTitle" name="bookTitle"
+                            aria-describedby="emailHelp" placeholder="Enter Book Title Here" autofocus
+                            value="Test Book Title">
+                    </div>
+                    <div class="form-group">
+                        <label for="authorName">Author</label>
+                        <input type="text" class="form-control" id="authorName" name="authorName"
+                            aria-describedby="emailHelp" placeholder="Enter Author's Full Name" value="Gandalf Farnam">
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Comments</label>
+                        <input type="text" class="form-control" id="comments" name="comments"
+                            aria-describedby="emailHelp" placeholder="Enter Comments Here" value="It was great!">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="submitterName">Your Name</label>
+                        <input type="text" class="form-control" id="submitterName" name="submitterName"
+                            value="Nathanael Huck">
+
+
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+                <div id="formMessage"></div>
+            </div>
+
+
+
+            <div class="col-6" id='mainContent'>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="bookrecs.js"></script>
+
+</body>
+
+</html>
