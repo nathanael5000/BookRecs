@@ -116,7 +116,10 @@ function formSubmit(event) {
     'authorName': recFormData.get('authorName'),
     'comments': recFormData.get('comments'),
     'submitterName': recFormData.get('submitterName'),
-    'dateSubmitted': newDateString
+    'dateSubmitted': newDateString,
+    'sex': recFormData.get('sex')
+
+
   }
 
   //Store the data using the Sheet Best API 
