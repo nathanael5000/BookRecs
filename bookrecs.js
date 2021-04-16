@@ -111,21 +111,40 @@ function formSubmit(event) {
   var newDate = new Date();
   var newDateString = newDate.toISOString();
 
+  var selectedGenre = null;
+  var fictionDropdownValue = recFormData.get('fiction');
+  var nonfictionDropdownValue = recFormData.get('nonfiction');
+
+  if (fictionDropdownValue !== "None" && nonfictionDropdownValue !== "None") {
+    alert("Please select a genre from either the Fiction or Nonfiction menu. You cannot select from both.");
+  } else if (fictionDropdownValue !== "None") {
+    //If User selected a Fiction Genre, then the Dropdown value is not "None"
+    selectedGenre = fictionDropdownValue;
+    console.log("User selected a Fiction genre: '" + fictionDropdownValue + "'.");
+  } else if (nonfictionDropdownValue !== "None") {
+    //If User selected a Non-Fiction Genre, then the Dropdown value is not "None"
+    selectedGenre = nonfictionDropdownValue;
+    console.log("User selected a Nonfiction genre: '" + nonfictionDropdownValue + "'.");
+  }
+
+
   var dataPackage = {
     'bookTitle': recFormData.get('bookTitle'),
     'authorName': recFormData.get('authorName'),
     'comments': recFormData.get('comments'),
     'submitterName': recFormData.get('submitterName'),
     'dateSubmitted': newDateString,
-    'sex': recFormData.get('sex')
-
-
+    'sex': recFormData.get('sex'),
+    'gradeLevel': recFormData.get('gradeLevel'),
+    'difficulty': recFormData.get('difficulty'),
+    'genre': selectedGenre
   }
 
-  //Store the data using the Sheet Best API 
-  sendData(dataPackage);
+  //Don't send the data package if it's incomplete
 
-
+  if (selectedGenre !== null) {
+    sendData(dataPackage);
+  }
 }
 
 const recForm = document.getElementById('newRecForm');
