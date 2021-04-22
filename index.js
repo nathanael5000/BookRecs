@@ -35,7 +35,7 @@ function loadCurrentData() {
 
       '<ul>' +
       '  <li>Boy/Girl: ' + itemInput.sex + '</li>' +
-      '  <li> Grade Level: ' + itemInput.gradeLevel + '</li>' +
+      '  <li> A.R. Level: ' + itemInput.arlevel + '</li>' +
       '  <li> Difficulty: ' + itemInput.difficulty + '</li>' +
       '  <li>Genre: ' + itemInput.genre + '</li>' +
       '</ul>' +
