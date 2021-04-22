@@ -33,18 +33,21 @@ function loadCurrentData() {
       '<span class="card-text">' + itemInput.comments + '</span>' + '</div>' +
       //'<a href="#" class="btn btn-primary">Go somewhere</a>' +
 
-      // '<ul>' +
-      // '  <li>sex</li>' +
-      // '  <li>grade</li>' +
-      // '  <li>difficulty</li>' +
-      // '  <li>genre</li>' +
-      // '</ul>' +
-      '<div class="row">' +
+      '<ul>' +
+      '  <li>Boy/Girl: ' + itemInput.sex + '</li>' +
+      '  <li> Grade Level: ' + itemInput.gradeLevel + '</li>' +
+      '  <li> Difficulty: ' + itemInput.difficulty + '</li>' +
+      '  <li>Genre: ' + itemInput.genre + '</li>' +
+      '</ul>' +
+
+
+      /*'<div class="row">' +
       '<div class="col-2">' +
       '<span class="badge badge-primary">Old</span>' +
       '</div>' +
       '<div class="col-2">' +
       '<span class="badge badge-secondary">New</span>' +
+      */
       '</div>' +
       '</div>' +
 
