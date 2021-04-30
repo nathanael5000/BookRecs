@@ -62,4 +62,27 @@ function loadCurrentData() {
   }
 
 }
+
 loadCurrentData();
+
+const button = document.getElementById('submitButton');
+
+button.addEventListener('click', event => {
+  event.preventDefault();
+  button.textContent = `Click count: ${event.detail}`;
+});
+
+const allDropdowns = document.getElementsByTagName('select');
+for (var i = 0; i < allDropdowns.length; i++) {
+  allDropdowns[i].addEventListener('change', event => {
+    //event.preventDefault();
+    var output = document.getElementById('output');
+    output.innerText = event.target.value;
+  });
+}
+
+/*Add code to reset one Genre menu if User selects a Genre from the OTHER menu.
+ if(user makes genre menu selection){
+    reset the other genre menu;
+  }
+*/
