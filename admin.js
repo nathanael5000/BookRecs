@@ -135,7 +135,7 @@ function formSubmit(event) {
     'submitterName': recFormData.get('submitterName'),
     'dateSubmitted': newDateString,
     'sex': recFormData.get('sex'),
-    'gradeLevel': recFormData.get('gradeLevel'),
+    'arlevel': recFormData.get('arlevel'),
     'difficulty': recFormData.get('difficulty'),
     'genre': selectedGenre
   }
