@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css">
     <!-- <link rel="stylesheet" href="style.css"> -->
     <title>Book Recs</title>
 </head>
@@ -68,28 +70,34 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="gradeLevel" class="w-40">Grade Level</label>
-                    <select name="gradeLevel" id="gradeLevelMenu" class="w-40">
+                    <label for="arlevel" class="w-20">A.R. Level</label>
+                    <!-- <select name="arlevel" id="arLevelMenu" class="w-40">
                         <option value="None">Select one...</option>
                         <option value="Infant">Infant/Toddler</option>
                         <option value="Preschool">Preschool</option>
                         <option value="Elementary">Elementary</option>
                         <option value="Middle School">Middle School</option>
                         <option value="High School">High School</option>
-
-                    </select>
+                    </select> -->
+                    <div class="row">
+                        <b>1&nbsp;&nbsp;&nbsp;</b>
+                        <input id="arlevel" name="arlevel" type="text" class="w-30" size="5" width="10" value=""
+                            data-slider-min="1.0" data-slider-max="12.0" data-slider-step=".1"
+                            data-slider-value="[1,12]" />
+                        <b>&nbsp;&nbsp;&nbsp;12</b>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="difficulty" class="w-40">Difficulty</label>
                     <select name="difficulty" id="difficultyMenu" class="w-40">
                         <option value="None">Select one...</option>
-                        <option value="boardBook">Board Book</option>
-                        <option value="pictureBook">Picture Book</option>
-                        <option value="storyBook">Story Book</option>
-                        <option value="earlyReader">Early Reader</option>
-                        <option value="chapterBook">Chapter Book</option>
-                        <option value="middleGrades">Middle Grades</option>
-                        <option value="youngAdult">Young Adult</option>
+                        <option value="Board Book">Board Book</option>
+                        <option value="Picture Book">Picture Book</option>
+                        <option value="Story Book">Story Book</option>
+                        <option value="Early Reader">Early Reader</option>
+                        <option value="Chapter Book">Chapter Book</option>
+                        <option value="Middle Grades">Middle Grades</option>
+                        <option value="Young Adult">Young Adult</option>
 
 
                     </select>
@@ -110,6 +118,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"></script>
     <script src="index.js"></script>
 
 </body>

@@ -1,3 +1,8 @@
+// https://github.com/seiyria/bootstrap-slider
+var slider = new Slider('#arlevel', {
+  handle: 'round'
+});
+
 async function clearContent() {
   var mainContentDiv = document.getElementById('mainContent');
   mainContentDiv.innerHTML = null;
@@ -22,20 +27,11 @@ function showData(itemInput) {
     //'<a href="#" class="btn btn-primary">Go somewhere</a>' +
 
     '<ul>' +
-    '  <li>Boy/Girl: ' + itemInput.sex + '</li>' +
+    '  <li> Genre: ' + itemInput.genre + '</li>' +
+    '  <li> Boy/Girl: ' + itemInput.sex + '</li>' +
     '  <li> A.R. Level: ' + itemInput.arlevel + '</li>' +
     '  <li> Difficulty: ' + itemInput.difficulty + '</li>' +
-    '  <li>Genre: ' + itemInput.genre + '</li>' +
     '</ul>' +
-
-
-    /*'<div class="row">' +
-    '<div class="col-2">' +
-    '<span class="badge badge-primary">Old</span>' +
-    '</div>' +
-    '<div class="col-2">' +
-    '<span class="badge badge-secondary">New</span>' +
-    */
     '</div>' +
     '</div>' +
 
