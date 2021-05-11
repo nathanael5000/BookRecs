@@ -3,6 +3,7 @@ var slider = new Slider('#arlevel', {
   handle: 'round'
 });
 
+
 async function clearContent() {
   var mainContentDiv = document.getElementById('mainContent');
   mainContentDiv.innerHTML = null;
@@ -72,35 +73,59 @@ loadCurrentData().then((data) => {
 // });
 
 function filterResults() {
+  var filterCriteria = {};
   const allDropdowns = document.getElementsByTagName('select');
   for (var i = 0; i < allDropdowns.length; i++) {
     allDropdowns[i].addEventListener('change', event => {
+
+      //Get HTML Element where the change occurred
       var menuElement = event.target;
-      console.log("Menu Element = " + menuElement.name);
-      var menuName = menuElement.name;
-      if (menuName === "fiction" || menuName === "nonfiction") {
+      var menuName = menuElement.name; //returns the value of the name attribute from the 
+      //console.log("Menu Name = " + menuName); //PASS: returns the dropdown element
+
+      //Reset one Genre menu if User selects a Genre from the OTHER menu
+      if (menuName === "fiction") {
+        console.log("User selected an option from the Fiction menu.");
+        var genreDropDown = document.getElementById("nonfictionMenu");
+        genreDropDown.selectedIndex = 0;
+        menuName = "genre";
+      } else if (menuName === "nonfiction") {
+        console.log("User selected an option from the Non-Fiction menu.");
+        var genreDropDown = document.getElementById("fictionMenu");
+        genreDropDown.selectedIndex = 0;
         menuName = "genre";
       }
 
       var menuValue = event.target.value;
-      var output = document.getElementById('output');
-      output.innerText = menuValue;
-
-      loadCurrentData()
-        .then((data) => {
-          clearContent();
-          //var filteredResults = data.filter(book => book.sex === "Boys"); //TEST
-          var filteredResults = data.filter(book => book[menuName] === menuValue); //Demo on Tuesday
-          console.log(filteredResults);
-          filteredResults.forEach(item => showData(item));
-        });
+      console.log("menuValue = " + menuValue);
+      filterCriteria[menuName] = menuValue;
+      console.log("filterCriteria = " + JSON.stringify(filterCriteria));
     });
   }
+
+  //Get value from slider and add it to the filter criteria //DEMO
+  slider.on('slide', function (sliderValue) {
+    // console.log(sliderValue); //TEST
+    filterCriteria.arlevel = sliderValue;
+    console.log(filterCriteria); //TEST
+  });
+
+  //TODO: Add code to compile filter criteria when multiple criteria are selected.
+
+  loadCurrentData()
+    .then((data) => {
+      clearContent();
+      //var filteredResults = data.filter(book => book.sex === "Boys"); //TEST
+      //var filteredResults = data.filter(book => book[menuName] === menuValue); //TODO: Fix this to use ALL selected filter criteria (Cf. filterCriteria)
+      var filteredResults = data; //TODO: this is a temporary crutch until we make it work with multiple filter criteria
+      //console.log(filteredResults);
+      filteredResults.forEach(item => showData(item));
+    });
 }
 filterResults();
 
-/*Add code to reset one Genre menu if User selects a Genre from the OTHER menu.
- if(user makes genre menu selection){
-    reset the other genre menu;
-  }
-*/
+//TEST LAB
+var arLeveltestValue = "8.6,9.7";
+//Test Value by outputting to innerText
+// var output = document.getElementById('output');
+// output.innerText = menuValue;
