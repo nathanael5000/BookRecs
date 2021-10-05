@@ -17,9 +17,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-1"></div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="form-group">
-
                     <select name="fiction" id="fictionMenu" class="w-75">
                         <option value="None"><b>Fiction</b></option>
                         <option value="Action &amp; Adventure">Action & Adventure</option>
@@ -70,22 +69,17 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="arlevel" class="w-20">A.R. Level</label>
-                    <!-- <select name="arlevel" id="arLevelMenu" class="w-40">
-                        <option value="None">Select one...</option>
-                        <option value="Infant">Infant/Toddler</option>
-                        <option value="Preschool">Preschool</option>
-                        <option value="Elementary">Elementary</option>
-                        <option value="Middle School">Middle School</option>
-                        <option value="High School">High School</option>
-                    </select> -->
-                    <div class="row">
+                    <label for="arlevel" class="w-20">A.R.</label>
+                    <input type="number" min="0" max="12" maxlength="4" size="5">
+                    to
+                    <input type="number" min="0" max="12" maxlength="4" size="4">
+                    <!-- <div class="row">
                         <b>1&nbsp;&nbsp;&nbsp;</b>
                         <input id="arlevel" name="arlevel" type="text" class="w-30" size="5" width="10"
                             data-slider-min="1.0" data-slider-max="12.0" data-slider-step=".1"
                             data-slider-value="[1,12]" />
                         <b>&nbsp;&nbsp;&nbsp;12</b>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="form-group">
                     <label for="difficulty" class="w-40">Difficulty</label>
