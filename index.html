@@ -70,16 +70,11 @@
 
                 <div class="form-group">
                     <label for="arlevel" class="w-20">A.R.</label>
-                    <input type="number" min="0" max="12" maxlength="4" size="5">
+                    <!-- 10/6: Ask Mr. Farnam what the step attribute does. -->
+                    <input name="armin" type="number" min="0" step="0.1" max="12" maxlength="4" size="5" value="1.0">
                     to
-                    <input type="number" min="0" max="12" maxlength="4" size="4">
-                    <!-- <div class="row">
-                        <b>1&nbsp;&nbsp;&nbsp;</b>
-                        <input id="arlevel" name="arlevel" type="text" class="w-30" size="5" width="10"
-                            data-slider-min="1.0" data-slider-max="12.0" data-slider-step=".1"
-                            data-slider-value="[1,12]" />
-                        <b>&nbsp;&nbsp;&nbsp;12</b>
-                    </div> -->
+                    <input name="armax" type="number" min="0" step="0.1" max="12" maxlength="4" size="4" value="4.5">
+
                 </div>
                 <div class="form-group">
                     <label for="difficulty" class="w-40">Difficulty</label>
@@ -102,7 +97,7 @@
             </div>
             <div class="col-md-5" id='mainContent'>
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-3"></div>
         </div>
     </div>
 

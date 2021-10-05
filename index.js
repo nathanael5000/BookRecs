@@ -1,9 +1,3 @@
-// https://github.com/seiyria/bootstrap-slider
-var slider = new Slider('#arlevel', {
-  handle: 'round'
-});
-
-
 async function clearContent() {
   var mainContentDiv = document.getElementById('mainContent');
   mainContentDiv.innerHTML = null;
@@ -74,9 +68,9 @@ loadCurrentData().then((data) => {
 
 function filterResults() {
   var filterCriteria = {};
-  const allDropdowns = document.getElementsByTagName('select');
-  for (var i = 0; i < allDropdowns.length; i++) {
-    allDropdowns[i].addEventListener('change', event => {
+  const allFormElements = document.querySelectorAll('div.form-group > select, input');
+  for (var i = 0; i < allFormElements.length; i++) {
+    allFormElements[i].addEventListener('change', event => {
 
       //Get HTML Element where the change occurred
       var menuElement = event.target;
@@ -99,16 +93,9 @@ function filterResults() {
       var menuValue = event.target.value;
       console.log("menuValue = " + menuValue);
       filterCriteria[menuName] = menuValue;
-      console.log("filterCriteria = " + JSON.stringify(filterCriteria));
+      alert("filterCriteria = " + JSON.stringify(filterCriteria));
     });
   }
-
-  //Get value from slider and add it to the filter criteria //DEMO
-  slider.on('slide', function (sliderValue) {
-    // console.log(sliderValue); //TEST
-    filterCriteria.arlevel = sliderValue;
-    console.log(filterCriteria); //TEST
-  });
 
   //TODO: Add code to compile filter criteria when multiple criteria are selected.
 
@@ -116,7 +103,9 @@ function filterResults() {
     .then((data) => {
       clearContent();
       //var filteredResults = data.filter(book => book.sex === "Boys"); //TEST
-      //var filteredResults = data.filter(book => book[menuName] === menuValue); //TODO: Fix this to use ALL selected filter criteria (Cf. filterCriteria)
+      //TODO: Fix this to use ALL selected filter criteria (Cf. filterCriteria)
+      //var filteredResults = data.filter(book => book[menuName] === menuValue); 
+
       var filteredResults = data; //TODO: this is a temporary crutch until we make it work with multiple filter criteria
       //console.log(filteredResults);
       filteredResults.forEach(item => showData(item));
